@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prueba1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Prueba2.unity
     guid: 939df7f9fe9256040861689ec414b42d
+  - enabled: 1
+    path: Assets/Scenes/Prueba3.unity
+    guid: 8af4f0cfc29ee4b4aa8ef96e552ae4f7
   m_configObjects: {}
