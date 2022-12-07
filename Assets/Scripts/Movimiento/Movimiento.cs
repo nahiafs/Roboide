@@ -35,6 +35,8 @@ public class Movimiento : MonoBehaviour
 
     private void Update()
     {
+        Cursor.lockState = (Input.GetKey(KeyCode.Escape) ? CursorLockMode.None : CursorLockMode.Locked);
+    
         tocaPiso = Physics.CheckSphere(detectaPiso.position, distanciaPiso, mascaraPiso);
 
         if(tocaPiso && velocity.y < 0)
