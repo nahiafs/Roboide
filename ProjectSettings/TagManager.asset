@@ -8,6 +8,7 @@ TagManager:
   - Puerta
   - Espada
   - Bala
+  - Muro
   layers:
   - Default
   - TransparentFX

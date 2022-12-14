@@ -6,6 +6,7 @@ public class RondaDisparos : MonoBehaviour
 {
     public int dianasTotales;
     static List<string> dianas;
+    public GameObject muro;
     
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,11 @@ public class RondaDisparos : MonoBehaviour
         if (dianas.Count == dianasTotales)
         {
             Destroy(this.gameObject);
+        }
+
+        if (dianas.Count == 9)
+        {
+            Destroy(muro);
         }
     }
 

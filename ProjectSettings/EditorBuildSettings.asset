@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prueba5.unity
     guid: 2db810a096c89ce45b09d733e42f587a
+  - enabled: 1
+    path: Assets/Scenes/Prueba6.unity
+    guid: ce358527232aaac44a8a102f20ed3038
+  - enabled: 1
+    path: Assets/Scenes/Prueba7.unity
+    guid: dc3a23b3eab32a3498ddb08fbae2e361
   m_configObjects: {}
