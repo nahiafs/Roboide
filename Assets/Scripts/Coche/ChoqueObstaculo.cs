@@ -12,6 +12,7 @@ public class ChoqueObstaculo : MonoBehaviour
         if (other.gameObject.name == "Personaje")
         {
             personaje.transform.position = new Vector3(5, 0.65f, -85);
+            personaje.transform.rotation = Quaternion.identity;
         }
     }
 }
