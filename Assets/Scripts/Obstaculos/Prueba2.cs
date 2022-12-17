@@ -10,37 +10,60 @@ public class Prueba2 : MonoBehaviour
     private GameObject obstaculo;
     private GameObject obstaculo2;
     private GameObject obstaculo3;
+    private GameObject obstaculo4;
+    private GameObject obstaculo5;
+
+    private GameObject puerta;
     
-    private float[] zonasAlto = {-2, 1, 4, 7, 10, 12};
-    private float[] zonasBajo = {-0.5f, 2.5f, 5.5f, 8.5f, 10.5f};
+    private float[] zonas = {-14, -12, -10, -8, -6, -4, -2, 0, 2};
 
     // Start is called before the first frame update
     void Start()
     {
-        obstaculo = Resources.Load("Obstaculo", typeof(GameObject)) as GameObject;
-        obstaculo2 = Resources.Load("Obstaculo2", typeof(GameObject)) as GameObject;
-        obstaculo3 = Resources.Load("Obstaculo3", typeof(GameObject)) as GameObject;
+        obstaculo = Resources.Load("Laser", typeof(GameObject)) as GameObject;
+        obstaculo2 = Resources.Load("Laser2", typeof(GameObject)) as GameObject;
+        obstaculo3 = Resources.Load("Laser3", typeof(GameObject)) as GameObject;
+        obstaculo4 = Resources.Load("Laser4", typeof(GameObject)) as GameObject;
+        obstaculo5 = Resources.Load("Laser5", typeof(GameObject)) as GameObject;
         
-        for (int i = 1; i <= 3; i++)
+        puerta = GameObject.Find("Puerta");
+
+        for (int i = 1; i <= 10; i++)
         {
-            Invoke("generarObstaculos", i * 5f);
+            Invoke("generarObstaculos", i * 1.5f);
         }
         
-        Invoke("quitarMuro", 16f);
+        Invoke("aparecePuerta", 16f);
     }
     
     public void generarObstaculos()
     {
-        for (int i = 0; i < Random.Range(4, 6); i++)
+        int random = Random.Range(1, 5);
+        
+        switch (random)
         {
-            Instantiate(obstaculo, new Vector3(zonasAlto[Random.Range(0, zonasAlto.Length)], obstaculo.transform.position.y, obstaculo.transform.position.z), Quaternion.identity);
-            Instantiate(obstaculo2, new Vector3(zonasBajo[Random.Range(0, zonasBajo.Length)], obstaculo2.transform.position.y, obstaculo2.transform.position.z), Quaternion.identity);
-            Instantiate(obstaculo3, new Vector3(zonasBajo[Random.Range(0, zonasBajo.Length)], obstaculo.transform.position.y, obstaculo.transform.position.z), Quaternion.identity);
+            case 1:
+                Instantiate(obstaculo, new Vector3(-6, obstaculo.transform.position.y, obstaculo.transform.position.z), obstaculo.transform.rotation);
+                break;
+            case 2:
+                Instantiate(obstaculo3, new Vector3(-6, obstaculo3.transform.position.y, obstaculo3.transform.position.z), obstaculo3.transform.rotation);
+                break;
+            case 3:
+                Instantiate(obstaculo4, new Vector3(-6, obstaculo4.transform.position.y, obstaculo4.transform.position.z), obstaculo4.transform.rotation);
+                break;
+            case 4:
+                Instantiate(obstaculo5, new Vector3(-6, obstaculo5.transform.position.y, obstaculo5.transform.position.z), obstaculo5.transform.rotation);
+                break;
+        }
+        
+        for (int i = 0; i < Random.Range(2, 5); i++)
+        {
+            Instantiate(obstaculo2, new Vector3(zonas[Random.Range(0, zonas.Length)], obstaculo2.transform.position.y, obstaculo2.transform.position.z), obstaculo2.transform.rotation);
         }
     }
 
-    public void quitarMuro()
+    public void aparecePuerta()
     {
-        Destroy(GameObject.Find("Muro"));
+        puerta.transform.position = new Vector3(-7.2f, 2f, 39.3f);
     }
 }
